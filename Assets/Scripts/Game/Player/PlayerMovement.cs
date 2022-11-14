@@ -62,7 +62,7 @@ namespace Game.Player
                 vel.y = (Vector2.up * movementSettings.JumpForce).y;
             }
             
-            
+             
             
             
             movementVec.Normalize();
