@@ -251,6 +251,7 @@ MonoBehaviour:
   isHeadTrigger: {fileID: 1655586733}
   isLeftSideTrigger: {fileID: 1235771359}
   isRightSideTrigger: {fileID: 101582841}
+  HasJumped: 0
   movementSettings: {fileID: 11400000, guid: 37f11b78c1da84d43af9321a15674157, type: 2}
 --- !u!4 &232620520
 Transform:
@@ -684,7 +685,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
