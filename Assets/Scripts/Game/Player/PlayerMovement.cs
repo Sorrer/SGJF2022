@@ -43,7 +43,7 @@ namespace Game.Player
                 coyoteTimer.Stop();
             }
             
-            Debug.Log(coyoteTimer.ElapsedMilliseconds + " " + movementSettings.coyoteTime * 1000);
+            
             
             Vector2 movementVec = Vector2.zero;
             
