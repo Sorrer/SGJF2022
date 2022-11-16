@@ -13,7 +13,9 @@ namespace Game.Common.ScriptableData
 
         [SerializeField]
         private T _value;
-
+        [SerializeField]
+        private T _defaultValue;
+        
         public T value
         {
             get => _value;
@@ -53,6 +55,26 @@ namespace Game.Common.ScriptableData
         protected override void InternalDeserialize(string s)
         {
             _value = JsonConvert.DeserializeObject<T>(s);
+        }
+
+        public override bool Equals(object other)
+        {
+            if(other.GetType() != typeof(ScriptableData<T>))
+            {
+                return false;
+            }
+
+            return value.Equals(((ScriptableData<T>)other).value);
+        }
+
+        public override int GetHashCode()
+        {
+            return value.GetHashCode();
+        }
+
+        public override void ResetToDefault()
+        {
+            _value = _defaultValue;
         }
     }
 

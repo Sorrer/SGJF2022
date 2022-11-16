@@ -55,5 +55,8 @@ namespace Game.Common.ScriptableData
         {
             fieldDirty = false;
         }
+        
+        public abstract void ResetToDefault();
+        
     }
 }
