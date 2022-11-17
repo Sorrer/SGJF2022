@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f530d786749b4249b7ebbef054f6dac7, type: 3}
   m_Name: Scriptable Data Group
   m_EditorClassIdentifier: 
-  data: []
+  data:
+  - {fileID: 11400000, guid: 1acfb21c5d507a04e9a8722e09aad798, type: 2}

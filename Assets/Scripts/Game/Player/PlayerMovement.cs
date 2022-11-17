@@ -8,6 +8,8 @@ namespace Game.Player
     {
         private Rigidbody2D rigidbody2D;
 
+        public PlayerAnimation playerAnimation;
+        
         private Vector2 vel, moveVel;
         
         public TriggerTracker isGroundedTracker;
@@ -60,6 +62,7 @@ namespace Game.Player
             {
                 HasJumped = true;
                 vel.y = (Vector2.up * movementSettings.JumpForce).y;
+                playerAnimation.PlayJump();
             }
             
              
@@ -101,9 +104,20 @@ namespace Game.Player
                     vel.y = 0;
                 }
             }
-            
-            
 
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                playerAnimation.PlayStand();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                playerAnimation.StopStand();
+            }
+            
+            if(vel.x != 0) playerAnimation.SetDirection(vel.x > 0 ? 1 : -1);
+            playerAnimation.SetSpeed(Mathf.Abs(vel.x), maxVerticalSpeed);
+            playerAnimation.SetVerticalVelocity(isGroundedTracker.isColliding ? 0 : vel.y);
+            
             rigidbody2D.velocity = vel;
         }
 

@@ -13,5 +13,10 @@ namespace Game.Player
         public float coyoteTime;
         
         public float groundingForce;
+
+        [Space(4)] [Header("Animation Settings")]
+        public AnimationCurve SpeedToAnimationSpeedCurve;
+        public float speedToAnimationMultiplier;
+
     }
 }
