@@ -91,13 +91,13 @@ namespace Game.Common.Interactable
 
         private float GetDistanceToObject(Vector3 position)
         {
-            Debug.DrawLine(Vector3.positiveInfinity + new Vector3(0, 0, 1), this.transform.position + new Vector3(0, 0, 1), Color.blue, 1);
+            //Debug.DrawLine(GetCenter(), position, Color.blue, 1);
             return Mathf.Abs(Vector2.Distance(position, GetCenter()));
         }
 
         private Vector2 GetCenter()
         {
-            return this.transform.TransformPoint(this._collider.bounds.center);
+            return this._collider.bounds.center;
         }
 
         // Remove inactive interactbles

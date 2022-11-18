@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogue:
   - WhenFalse: 0
     condition: {fileID: 0}
-    dialogue: Work.. work.. work..
+    dialogue: Rats weren't built in a day
     animation: {fileID: 0}
     typerSettings: {fileID: 0}
-    _executionAmounts: 0
+    _executionAmounts: 26
