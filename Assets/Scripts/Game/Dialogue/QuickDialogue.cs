@@ -8,7 +8,7 @@ namespace Game.Dialogue
     
     public class QuickDialogue : MonoBehaviour
     {
-
+        public TextBoxGroup group;
         public QuickDialogueData dialogue;
         public QuickDialogueDisplay display;
 
@@ -50,7 +50,7 @@ namespace Game.Dialogue
             }
             
             // Display the dialogue via QuickDialogueDisplay
-            display.Display(selected.dialogue);
+            display.Display(selected, group);
         }
     }
 }

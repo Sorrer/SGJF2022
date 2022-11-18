@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Common.ScriptableData;
 using Game.Conditions;
 using UnityEngine;
@@ -8,11 +9,15 @@ namespace Game.Dialogue
     [CreateAssetMenu(fileName = "Quick Dialogue Data",menuName = "Data/Quick Dialogue")]
     public class QuickDialogueData : ScriptableObject
     {
+        [Serializable]
         public class ConditionalDialogue
         {
             public bool WhenFalse; // Activates this dialogue when false
             public ConditionBase condition;
             public string dialogue;
+            public AnimationClip animation;
+            public TextBoxTyperSettings typerSettings;
+            
             [HideInInspector] public int _executionAmounts; // To create an even amount of executions for this conditional dialogue
         }
 
@@ -41,5 +46,6 @@ namespace Game.Dialogue
 
             return trueDialogues;
         }
+        
     }
 }

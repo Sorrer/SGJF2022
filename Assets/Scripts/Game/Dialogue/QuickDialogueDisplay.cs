@@ -1,44 +1,47 @@
 ﻿using System.Collections;
+using System.Data.Common;
 using UnityEngine;
 
 namespace Game.Dialogue
 {
     public class QuickDialogueDisplay : MonoBehaviour
     {
-        public float DisplayTime;
-        public GameObject TextBoxPrefab;
+
+        private GameObject currentTextBox;
         
         public Transform TextBoxRootLocation;
+
+        public Animation animator;
         
-        private Coroutine current;
-        public void Display(string text)
+        
+        public void Display(QuickDialogueData.ConditionalDialogue data, TextBoxGroup group)
         {
-            if (current != null)
+            if (currentTextBox != null)
             {
-                StopCoroutine(current);
+                Destroy(currentTextBox);
             }
             
-            current = StartCoroutine(DisplayCoroutine(text));
-        }
+            // Bring up UI (remove previous text and stop previous coroutine if exists)
+            // Play animation if there is one
+            if (data.animation)
+            {
+                animator.Stop();
+                animator.clip = data.animation;
+                animator.Play();
+            }
 
-
-        public IEnumerator DisplayCoroutine(string text)
-        {
-            
-            // Bring up UI (remove previous text and stop previous coroutine if exists
-            
+            var pair = group.GetType(data.typerSettings ? data.typerSettings.type : TextBoxGroupType.Normal);
             // Spawn TextBoxPrefab at current screen location + offset (TextBoxRootLocation)
-            
+            currentTextBox = Instantiate(pair.typerPrefab);
+            currentTextBox.transform.position = TextBoxRootLocation.position;
+            currentTextBox.transform.SetParent(TextBoxRootLocation, true);
             
             // Type/display the text
+
+            var typer = currentTextBox.GetComponent<TextBoxTyper>();
             
-            // Wait
-            yield return new WaitForSeconds(DisplayTime);
-
-            // Bring down UI
-
-            current = null;
-
+            typer.Type(data.dialogue, data.typerSettings == null ? pair.defaultSettings : data.typerSettings);
         }
+
     }
 }
