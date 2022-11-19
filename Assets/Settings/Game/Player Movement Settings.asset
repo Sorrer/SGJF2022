@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685023e92a064a1e85ca7da3ca7b562d, type: 3}
   m_Name: Player Movement Settings
   m_EditorClassIdentifier: 
-  JumpForce: 12.53
+  JumpForce: 13
   Speed: 3
   gravity: 37.92
   maxVerticalSpeed: 16.33
@@ -43,3 +43,4 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   speedToAnimationMultiplier: 1.87
+  PlayLandSoundFallTimeThreshold: 0.45

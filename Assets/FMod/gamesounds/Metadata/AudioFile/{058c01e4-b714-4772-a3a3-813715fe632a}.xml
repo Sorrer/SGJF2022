@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{058c01e4-b714-4772-a3a3-813715fe632a}">
+		<property name="assetPath">
+			<value>Revive heal 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.7097505668934241</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{94560926-fa34-40cb-b070-574d2f979874}</destination>
+		</relationship>
+	</object>
+</objects>

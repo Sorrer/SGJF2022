@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{21d4c2b6-72bc-4a95-9a28-5a636d85d146}">
+		<property name="assetPath">
+			<value>Collect star 5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3585714285714285</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{94560926-fa34-40cb-b070-574d2f979874}</destination>
+		</relationship>
+	</object>
+</objects>

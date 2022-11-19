@@ -17,7 +17,7 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int STOP_STAND = Animator.StringToHash("StopStand");
     private static readonly int STAND = Animator.StringToHash("Stand");
     private static readonly int JUMP = Animator.StringToHash("Jump");
-
+    
     public void PlayJump()
     {
         animator.SetTrigger(JUMP);

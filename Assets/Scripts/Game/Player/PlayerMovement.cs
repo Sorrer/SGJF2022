@@ -11,6 +11,8 @@ namespace Game.Player
         public PlayerAnimation playerAnimation;
         
         private Vector2 vel, moveVel;
+
+        public PlayerSounds sounds;
         
         public TriggerTracker isGroundedTracker;
         public TriggerTracker isHeadTrigger;
@@ -23,6 +25,8 @@ namespace Game.Player
         public bool CanJump => (isGroundedTracker.isColliding ||
                                coyoteTimer.ElapsedMilliseconds < (movementSettings.coyoteTime * 1000)) && !HasJumped;
 
+        private bool previousIsGroundColliding;
+        private float fallTime;
         
         public PlayerMovementSettings movementSettings;
         // Start is called before the first frame update
@@ -30,6 +34,7 @@ namespace Game.Player
         {
             rigidbody2D = this.GetComponent<Rigidbody2D>();
             Physics2D.simulationMode = SimulationMode2D.Update;
+            previousIsGroundColliding = isGroundedTracker.isColliding;
         }
 
         // Update is called once per frame
@@ -45,6 +50,35 @@ namespace Game.Player
                 coyoteTimer.Stop();
             }
             
+
+
+            if (isGroundedTracker.isColliding != previousIsGroundColliding)
+            {
+                if (isGroundedTracker.isColliding)
+                {
+                    if (fallTime >= movementSettings.PlayLandSoundFallTimeThreshold)
+                    {
+                        sounds.PlayLand();
+                    }
+                    else
+                    {
+                        sounds.PlayLandSmall();
+                    }
+                }
+            }
+
+            if (!isGroundedTracker.isColliding && vel.y < 0)
+            {
+                fallTime += Time.deltaTime;
+            }
+            else
+            {
+                fallTime = 0;
+            }
+            
+            
+
+            previousIsGroundColliding = isGroundedTracker.isColliding;            
             
             
             Vector2 movementVec = Vector2.zero;
@@ -63,6 +97,7 @@ namespace Game.Player
                 HasJumped = true;
                 vel.y = (Vector2.up * movementSettings.JumpForce).y;
                 playerAnimation.PlayJump();
+                sounds.PlayJumpSound();
             }
             
              

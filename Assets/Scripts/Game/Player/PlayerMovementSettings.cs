@@ -18,5 +18,6 @@ namespace Game.Player
         public AnimationCurve SpeedToAnimationSpeedCurve;
         public float speedToAnimationMultiplier;
 
+        public float PlayLandSoundFallTimeThreshold = 10.0f;
     }
 }
