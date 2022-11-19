@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Player
@@ -19,5 +20,6 @@ namespace Game.Player
         public float speedToAnimationMultiplier;
 
         public float PlayLandSoundFallTimeThreshold = 10.0f;
+
     }
 }
