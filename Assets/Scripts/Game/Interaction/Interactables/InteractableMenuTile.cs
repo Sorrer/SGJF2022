@@ -19,6 +19,8 @@ public class InteractableMenuTile : MonoBehaviour
 
         public LevelTracker tracker;
 
+        [SerializeField] float shiftOffset;
+
         void Start() {
             // TODO: Remove this
             tracker.levels.Clear();
@@ -33,16 +35,50 @@ public class InteractableMenuTile : MonoBehaviour
             }
         }
 
+        Collider2D targetCollider;
+        //int hoverShifted, hoverCurr; // so only shifts once
+        Vector3 destInitialPos;
         void Update() {
             mouseLoc = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (Input.GetMouseButtonDown(0)) {
-                Collider2D targetCollider = Physics2D.OverlapPoint(mouseLoc);
-                gameTarget = targetCollider.transform.gameObject;
-                if (targetCollider && gameTarget.tag != "Button") {
-                    target = gameTarget.GetComponent<Rigidbody2D>();
-                    initialVector = targetCollider.transform.position;
-                    offset = target.transform.position - mouseLoc;
+                targetCollider = Physics2D.OverlapPoint(mouseLoc);
+                if (targetCollider != null && (gameTarget = targetCollider.transform.gameObject).tag != "Button") {
+                    if (targetCollider) {
+                        target = gameTarget.GetComponent<Rigidbody2D>();
+                        initialVector = targetCollider.transform.position;
+                        offset = target.transform.position - mouseLoc;
+                    }
+                }
+            }
+
+            foreach (var tile in levelTiles) {
+                tile.transform.GetChild(0).transform.localPosition = Vector3.zero;
+            }
+
+            if (Input.GetMouseButton(0) && targetCollider != null && gameTarget.tag != "Button") {
+                // need to ignore collision w/ button?
+                var targTrigger = target.GetComponent<TriggerTracker>();
+                if (targTrigger.isColliding) {
+                    gameDestination = targTrigger.colliding[0];
+                    float closestPosition = float.PositiveInfinity;
+                    foreach (var go in targTrigger.colliding) {
+                        float dist = Vector3.Distance(go.transform.position, target.transform.position);
+                        if (dist < closestPosition) {
+                            gameDestination = go;
+                            closestPosition = dist;
+                        }
+                    }
+                    destInitialPos = initialPosition[GetLevelNumIndex(gameDestination.GetComponent<LevelStatus>().status.levelNum)];
+
+                    // Shift hover object
+                    foreach (var item in targTrigger.colliding) {
+                        if (gameTarget.transform.position.x < gameDestination.transform.position.x) { //shift right
+                            gameDestination.transform.GetChild(0).transform.localPosition = new Vector3(shiftOffset,0,0);
+                        } else { // shift left
+                            gameDestination.transform.GetChild(0).transform.localPosition = new Vector3(-shiftOffset,0,0);
+                        }
+                    }
                 }
             }
 
@@ -51,35 +87,31 @@ public class InteractableMenuTile : MonoBehaviour
                 target.velocity = Vector2.zero;
                 var trigger = target.GetComponent<TriggerTracker>();
                 if (trigger.isColliding) {
+                    Debug.Log("i collide effectively ()b");
                     gameDestination = trigger.colliding[0];
 
                     float closestPosition = float.PositiveInfinity;
-
-                    foreach(var go in trigger.colliding)
-                    {
+                    foreach (var go in trigger.colliding) {
                         float dist = Vector3.Distance(go.transform.position, target.transform.position);
 
-                        if(dist < closestPosition)
-                        {
+                        if (dist < closestPosition) {
                             gameDestination = go;
                             closestPosition = dist;
                         }
                     }
                     // (targ, dest)
-                    float targ = gameTarget.transform.position.x;
-                    float dest = gameDestination.transform.position.x;
                     if (gameTarget.transform.position.x < gameDestination.transform.position.x) {
                         insertBefore = true;
                     } else {
                         insertBefore = false;
                     }
-                    Debug.Log(targ + "   " + dest + "   " + insertBefore);
                     tracker.MoveLevel(gameTarget.GetComponent<LevelStatus>().status,
                                     gameDestination.GetComponent<LevelStatus>().status, insertBefore);
 
                     UpdateTilePositions();
                 } else {
                     target.transform.position = initialVector;
+                    gameDestination.transform.position = destInitialPos;
                 }
                 target = null;
             }
@@ -101,6 +133,16 @@ public class InteractableMenuTile : MonoBehaviour
             }
 
             return null;
+        }
+
+        public int GetLevelNumIndex(int levelNum)
+        {
+            for(int i = 0; i < levelTiles.Count; i++)
+            {
+                if(levelTiles[i].status.levelNum == levelNum) return i;
+            }
+
+            return -1;
         }
 
         void FixedUpdate() {

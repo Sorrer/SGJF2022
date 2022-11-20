@@ -179,6 +179,7 @@ MonoBehaviour:
   - {fileID: 1968489019}
   - {fileID: 1559663687}
   tracker: {fileID: 11400000, guid: f5ce2546dae5b5240bcc27c98f65c0c4, type: 2}
+  shiftOffset: 0.25
 --- !u!4 &424752173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 603076738904370745, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
@@ -369,6 +370,10 @@ PrefabInstance:
       propertyPath: status.levelNum
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 9104940236689029695, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1714709023, guid: 8712f9d463fb5fd4fa969b332d224ee5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
 --- !u!4 &1123198816 stripped
@@ -3843,6 +3848,10 @@ PrefabInstance:
       propertyPath: status.levelNum
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9104940236689029695, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -678180705, guid: 8712f9d463fb5fd4fa969b332d224ee5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
 --- !u!4 &1559663682 stripped
@@ -3960,6 +3969,10 @@ PrefabInstance:
       propertyPath: status.levelNum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9104940236689029695, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2112687604, guid: 8712f9d463fb5fd4fa969b332d224ee5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
 --- !u!4 &1716161903 stripped
@@ -4418,6 +4431,10 @@ PrefabInstance:
       propertyPath: status.levelNum
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9104940236689029695, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1692220171, guid: 8712f9d463fb5fd4fa969b332d224ee5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c35a49ec015a040bc9666b8a6d2ab6, type: 3}
 --- !u!4 &1968489014 stripped

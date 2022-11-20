@@ -19,7 +19,7 @@ public class InteractableButton : MonoBehaviour
     }
 
     void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButton(0)) {
             renderer.color = new Color(baseColor.r-clickOffset, baseColor.g-clickOffset,
                                     baseColor.b-clickOffset, baseColor.a);
             clicked = true;
