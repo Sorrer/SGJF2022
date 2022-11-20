@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8803381053883595894}
   - component: {fileID: 8803381053883595893}
+  - component: {fileID: 6282311166945536000}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -76,6 +77,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6282311166945536000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803381053883595895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec3792a9b7444bfbd26010142cb266c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8803381053962369851
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +278,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8803381054034826341}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6282311166945536000}
+        m_TargetAssemblyTypeName: Game.Utility.SwitchScene, Assembly-CSharp
+        m_MethodName: Switch
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LevelMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8803381053883595893}
+        m_TargetAssemblyTypeName: Game.UI.PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8803381054083016367
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,10 +955,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

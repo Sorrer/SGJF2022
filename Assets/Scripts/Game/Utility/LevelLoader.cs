@@ -60,6 +60,8 @@ namespace Game.Utility
                 {
                     loading.allowSceneActivation = true;
                 }
+
+                yield return null;
             }
             
             // TODO: Hide rat

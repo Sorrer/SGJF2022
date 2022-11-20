@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fedcd1591ca4d6cac7e4a69f7b6b4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneWaitTime: 3
+  sceneWaitTime: 2
   loadingSceneName: LoadingScene
 --- !u!1 &2048308405
 GameObject:
