@@ -22,7 +22,7 @@ public class DoorObject : MonoBehaviour
 
     public bool Opened;
     public bool Locked;
-    
+    public bool OpenOnStartIfConditions;
     public bool PlaySound;
     public SoundEmitter FailedEnterDoorSound;
     public SoundEmitter EnterDoorSound;
@@ -48,7 +48,7 @@ public class DoorObject : MonoBehaviour
         }
         else
         {
-            if (enableWhen.Count > 0 && ConditionBase.IsTrueAll(enableWhen))
+            if (OpenOnStartIfConditions && enableWhen.Count > 0 && ConditionBase.IsTrueAll(enableWhen))
             {
                 ForceOpen();
             }
@@ -82,7 +82,7 @@ public class DoorObject : MonoBehaviour
 
         if (Locked) return;
         
-        if (nowOpen)
+        if (nowOpen && !Opened)
         {
             Open();
 

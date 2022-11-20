@@ -11,6 +11,11 @@ using UnityEngine;
 
         private int indexTarget, indexDest;
 
+        public void ClearLevels()
+        {
+            levels = new List<LvlStat>();
+            levels.Clear();
+        }
         public void MoveLevel(LvlStat statTarget, LvlStat statDestination, bool before) {
             // remove level of number lvlTarget, save in temp
             tempTarget = statTarget;

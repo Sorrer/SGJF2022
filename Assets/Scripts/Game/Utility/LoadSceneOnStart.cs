@@ -9,9 +9,13 @@ namespace Game.Utility
         public string SceneName;
         public LevelTracker levelTracker; // TEMP HERE< NEED FAST CODE
 
+        private void Awake()
+        {
+            levelTracker.ClearLevels();
+        }
+
         public void Start()
         {
-            levelTracker.levels.Clear();
             SceneManager.LoadScene(SceneName);
         }
     }

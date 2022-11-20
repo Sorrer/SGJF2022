@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Level Tracker
   m_EditorClassIdentifier: 
   levels:
-  - levelNum: 3
-    isOpen: 1
-    sceneName: Level3
   - levelNum: 2
     isOpen: 1
     sceneName: Level2
   - levelNum: 1
     isOpen: 1
     sceneName: Level1
+  - levelNum: 3
+    isOpen: 1
+    sceneName: Level3
   - levelNum: 4
     isOpen: 0
     sceneName: Level4
