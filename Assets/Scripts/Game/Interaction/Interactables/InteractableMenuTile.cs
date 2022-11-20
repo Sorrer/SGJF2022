@@ -38,8 +38,8 @@ public class InteractableMenuTile : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0)) {
                 Collider2D targetCollider = Physics2D.OverlapPoint(mouseLoc);
-                if (targetCollider) {
-                    gameTarget = targetCollider.transform.gameObject;
+                gameTarget = targetCollider.transform.gameObject;
+                if (targetCollider && gameTarget.tag != "Button") {
                     target = gameTarget.GetComponent<Rigidbody2D>();
                     initialVector = targetCollider.transform.position;
                     offset = target.transform.position - mouseLoc;
