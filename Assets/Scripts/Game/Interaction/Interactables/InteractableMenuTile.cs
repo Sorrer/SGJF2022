@@ -36,8 +36,11 @@ public class InteractableMenuTile : MonoBehaviour
             {
                 foreach (LevelStatus tile in levelTiles)
                 {
+                    initialPosition.Add(tile.transform.position);
                     tile.SetStatus(tracker.GetLevel(tile.status.levelNum));
                 }
+                
+                UpdateTilePositions();
             }
         }
 
@@ -50,7 +53,13 @@ public class InteractableMenuTile : MonoBehaviour
             if (Input.GetMouseButtonDown(0)) {
                 targetCollider = Physics2D.OverlapPoint(mouseLoc);
                 if (targetCollider != null && (gameTarget = targetCollider.transform.gameObject).tag != "Button") {
-                    if (targetCollider) {
+                    if (targetCollider)
+                    {
+
+                        var lvlStatus = gameTarget.GetComponent<LevelStatus>();
+
+                        if (!lvlStatus.status.isOpen) return;
+                        
                         target = gameTarget.GetComponent<Rigidbody2D>();
                         initialVector = targetCollider.transform.position;
                         offset = target.transform.position - mouseLoc;

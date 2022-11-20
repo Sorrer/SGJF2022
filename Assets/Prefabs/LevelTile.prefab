@@ -113,6 +113,7 @@ MonoBehaviour:
   renderer: {fileID: 9104940236689029695}
   colorClosed: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
   colorOpen: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 0.9811321, g: 0.9755431, b: 0.38319683, a: 1}
   status:
     levelNum: 1
     isOpen: 0

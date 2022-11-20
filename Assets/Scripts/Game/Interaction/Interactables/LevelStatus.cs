@@ -9,6 +9,8 @@ public class LevelStatus : MonoBehaviour
     public SpriteRenderer renderer;
     public Color colorClosed;
     public Color colorOpen;
+
+    public Color hoverColor;
     
     [SerializeField]
     public LvlStat status;
@@ -32,6 +34,19 @@ public class LevelStatus : MonoBehaviour
             renderer.color = colorClosed;
             renderer.sortingOrder = -1;
         }
+    }
+
+    private void OnMouseEnter()
+    {
+        if (status.isOpen)
+        {
+            renderer.color = hoverColor;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        SetStatus(this.status);
     }
 }
 
