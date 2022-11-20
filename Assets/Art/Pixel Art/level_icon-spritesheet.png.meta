@@ -209,6 +209,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: level_icon-spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49b704770355ba4187daf53cdcea232
+      internalID: 454307162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -220,6 +241,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      level_icon-spritesheet_5: 454307162
       level_icon-spritesheet_0: -749560082
       level_icon-spritesheet_2: -2112687604
       level_icon-spritesheet_4: -678180705
