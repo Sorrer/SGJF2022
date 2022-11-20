@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 53918a301f40aa94ab60f5df100d5c8f
+guid: 3405b0f7fc491d44abd728d10321591f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -82,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: build_window_open_0
+      name: build_window_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8d55160404c214448464ed280b7db2f
-      internalID: 111519108
+      spriteID: f13e915b85690954e9dd04200d6236ee
+      internalID: -1500236083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_1
+      name: build_window_1
       rect:
         serializedVersion: 2
         x: 16
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ae9d7a5a4e25fd448c2a379dfde41d3
-      internalID: 1068834875
+      spriteID: 6ef2e1749cb97794882e1f34b3b88349
+      internalID: -2133561556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_2
+      name: build_window_2
       rect:
         serializedVersion: 2
         x: 32
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad0f25a54ff16174eac04a7fc39a91ae
-      internalID: 909423676
+      spriteID: ce51f486a05414d4f9da3ffcd34e7ce9
+      internalID: 2077728208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_3
+      name: build_window_3
       rect:
         serializedVersion: 2
         x: 0
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5face0c36c25924194fd9146294d090
-      internalID: -719315562
+      spriteID: 9f018128d9d0e5c4e981a4a49fd5cc43
+      internalID: -384293129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_4
+      name: build_window_4
       rect:
         serializedVersion: 2
         x: 16
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c53f513eeaf19934295104c54a0d4f12
-      internalID: -312303028
+      spriteID: bedc82bf4d980534a8294d864549ce85
+      internalID: 1900485669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_5
+      name: build_window_5
       rect:
         serializedVersion: 2
         x: 32
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32b4b928dfa9e93409375f39c909ac61
-      internalID: -917696794
+      spriteID: 6724ce6dbcfeaaf4cb8d2335dca7c8b5
+      internalID: 477866340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_6
+      name: build_window_6
       rect:
         serializedVersion: 2
         x: 0
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c01d2214e22704da1b277d33f93e99
-      internalID: 699393211
+      spriteID: 3558ab77d209b474ba0500eb88e641f5
+      internalID: 1592341549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_7
+      name: build_window_7
       rect:
         serializedVersion: 2
         x: 16
@@ -290,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9af2f4b0bd472ce44b781764ccb96b03
-      internalID: 1874281494
+      spriteID: 9ccfbb7c89d44ae47b4b275b39b7d1ca
+      internalID: -403309067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: build_window_open_8
+      name: build_window_8
       rect:
         serializedVersion: 2
         x: 32
@@ -311,8 +311,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f07ad956b675b7741a9919aa3ff30c2b
-      internalID: -743617562
+      spriteID: c7f19412251670241a4648c400aec0e0
+      internalID: 1167852155
       vertices: []
       indices: 
       edges: []
@@ -328,15 +328,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      build_window_open_5: -917696794
-      build_window_open_3: -719315562
-      build_window_open_4: -312303028
-      build_window_open_7: 1874281494
-      build_window_open_6: 699393211
-      build_window_open_0: 111519108
-      build_window_open_2: 909423676
-      build_window_open_8: -743617562
-      build_window_open_1: 1068834875
+      build_window_2: 2077728208
+      build_window_6: 1592341549
+      build_window_4: 1900485669
+      build_window_3: -384293129
+      build_window_8: 1167852155
+      build_window_7: -403309067
+      build_window_0: -1500236083
+      build_window_5: 477866340
+      build_window_1: -2133561556
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
