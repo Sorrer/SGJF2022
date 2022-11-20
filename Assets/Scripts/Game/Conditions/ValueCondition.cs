@@ -1,4 +1,5 @@
 ﻿using Game.Common.ScriptableData;
+using Game.Common.ScriptableData.Values;
 using UnityEngine;
 
 namespace Game.Conditions
@@ -7,11 +8,23 @@ namespace Game.Conditions
     public class ValueCondition : ConditionBase
     {
         public ScriptableDataBase data1;
-        public ScriptableDataBase data2;
 
+        public enum Comparator
+        {
+            EQUAL, NOT_EQUAL, LESS_THAN, GREATER_THAN, LESS_THAN_EQUAL, GREATER_THAN_EQUAL
+        }
+
+        public float FloatCompare;
+        
         public override bool IsTrue()
         {
-            return data1.Equals(data2);
+
+            if (data1.GetType() == typeof(FloatScriptableData))
+            {
+                
+            }
+
+            return false;
         }
     }
 }

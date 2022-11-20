@@ -5,7 +5,8 @@ using Random = UnityEngine.Random;
 
 namespace Game.Dialogue
 {
-    
+ 
+    [RequireComponent(typeof(QuickDialogueDisplay))]
     public class QuickDialogue : MonoBehaviour
     {
         public TextBoxGroup group;
@@ -27,7 +28,7 @@ namespace Game.Dialogue
             
             if (dialogueOptions.Count == 0)
             {
-                Debug.LogWarning("No dialogue found for this character " + dialogue.name + " " + this.name);
+                //Debug.LogWarning("No dialogue found for this character " + dialogue.name + " " + this.name);
                 return;
             }
             

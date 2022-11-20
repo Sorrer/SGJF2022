@@ -132,6 +132,7 @@
 		<relationship name="effects">
 			<destination>{677f8007-d065-49d8-af76-a4a2665ebf97}</destination>
 			<destination>{80bded54-b6d2-4877-ba13-6dd61ce0b080}</destination>
+			<destination>{adf1fee7-8250-4845-95e3-4f8efd1a340c}</destination>
 			<destination>{3b0474d2-bf6b-4db9-8671-73c15372f3dc}</destination>
 		</relationship>
 	</object>
@@ -196,13 +197,24 @@
 	<object class="MixerBusFader" id="{0744a3bb-da70-40cc-95c8-c34120b58a96}" />
 	<object class="SFXReverbEffect" id="{677f8007-d065-49d8-af76-a4a2665ebf97}">
 		<property name="decayTime">
-			<value>850</value>
+			<value>800</value>
 		</property>
 		<property name="HFDecayRatio">
 			<value>35.5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{80bded54-b6d2-4877-ba13-6dd61ce0b080}" />
+	<object class="ThreeEQEffect" id="{adf1fee7-8250-4845-95e3-4f8efd1a340c}">
+		<property name="lowGain">
+			<value>-23</value>
+		</property>
+		<property name="midGain">
+			<value>-30</value>
+		</property>
+		<property name="highGain">
+			<value>-12.5</value>
+		</property>
+	</object>
 	<object class="SpatialiserEffect" id="{3b0474d2-bf6b-4db9-8671-73c15372f3dc}" />
 	<object class="AutomationPoint" id="{0452293e-7918-44f3-8190-4b216b869e17}">
 		<property name="position">

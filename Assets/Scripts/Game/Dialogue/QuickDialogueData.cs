@@ -13,7 +13,7 @@ namespace Game.Dialogue
         public class ConditionalDialogue
         {
             public bool WhenFalse; // Activates this dialogue when false
-            public ConditionBase condition;
+            public List<ConditionBase> condition = new List<ConditionBase>();
             public string dialogue;
             public AnimationClip animation;
             public TextBoxTyperSettings typerSettings;
@@ -30,13 +30,20 @@ namespace Game.Dialogue
             List<ConditionalDialogue> trueDialogues = new List<ConditionalDialogue>();
             foreach (var d in dialogue)
             {
-                if (d.condition == null)
+                if (d.condition == null || d.condition.Count == 0)
                 {
                     trueDialogues.Add(d);
                     continue;
                 }
 
-                var isTrue = d.condition.IsTrue();
+                var isTrue = true;
+
+                foreach (var cond in d.condition)
+                {
+                    if (cond == null) continue;
+                    isTrue = cond.IsTrue();
+                    if (!isTrue) break;
+                }
                 
                 if (isTrue || (!isTrue && d.WhenFalse))
                 {

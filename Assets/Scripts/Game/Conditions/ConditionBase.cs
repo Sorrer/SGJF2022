@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game.Conditions
 {
@@ -8,5 +9,17 @@ namespace Game.Conditions
         
         public const string CONDITION_BASE_FILE_PATH = "Condition/"; 
         public abstract bool IsTrue();
+
+        public static bool IsTrueAll(List<ConditionBase> conditionBases)
+        {
+            if (conditionBases.Count == 0) return true;
+
+            foreach (var cond in conditionBases)
+            {
+                if (!cond.IsTrue()) return false;
+            }
+
+            return true;
+        }
     }
 }

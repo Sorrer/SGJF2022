@@ -56,6 +56,7 @@ namespace Game.Player
             {
                 if (isGroundedTracker.isColliding)
                 {
+                    // TODO Add particle effects for this
                     if (fallTime >= movementSettings.PlayLandSoundFallTimeThreshold)
                     {
                         sounds.PlayLand();
@@ -151,7 +152,7 @@ namespace Game.Player
             
             if(vel.x != 0) playerAnimation.SetDirection(vel.x > 0 ? 1 : -1);
             playerAnimation.SetSpeed(Mathf.Abs(vel.x), maxVerticalSpeed);
-            playerAnimation.SetVerticalVelocity(isGroundedTracker.isColliding ? 0 : vel.y);
+            playerAnimation.SetVerticalVelocity(isGroundedTracker.isColliding, isGroundedTracker.isColliding ? 0 : vel.y);
             
             rigidbody2D.velocity = vel;
         }

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Game.Common.Interactable.Interactables
@@ -18,5 +20,6 @@ namespace Game.Common.Interactable.Interactables
         {
             OnDeactivate.Invoke();
         }
+        
     }
 }

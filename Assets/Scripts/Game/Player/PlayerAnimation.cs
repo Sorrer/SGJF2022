@@ -17,7 +17,12 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int STOP_STAND = Animator.StringToHash("StopStand");
     private static readonly int STAND = Animator.StringToHash("Stand");
     private static readonly int JUMP = Animator.StringToHash("Jump");
-    
+    private static readonly int IS_GROUNDED = Animator.StringToHash("IsGrounded");
+
+    public void SetIsGrounded(bool isGrounded)
+    {
+        animator.SetBool(IS_GROUNDED ,isGrounded);
+    }
     public void PlayJump()
     {
         animator.SetTrigger(JUMP);
@@ -54,21 +59,26 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetFloat(SPEED, newVal);
     }
 
-    public void SetVerticalVelocity(float val)
+    public void SetVerticalVelocity(bool isGrounded, float val)
     {
         if (val > 0)
         {
             animator.SetBool(IS_FALLING, false);
             animator.SetBool(IS_RISING, true);
         }
-        else
+        else if (val < 0)
         {
             animator.SetBool(IS_FALLING, true);
             animator.SetBool(IS_RISING, false);
         }
+        else
+        {
+            animator.SetBool(IS_FALLING, false);
+            animator.SetBool(IS_RISING, false);
+        }
+        
     }
-    
-    
+
 
 
 }

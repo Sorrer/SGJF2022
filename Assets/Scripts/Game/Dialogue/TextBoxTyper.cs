@@ -76,9 +76,12 @@ namespace Game.Dialogue
                         juicer.SetProgress(progress);
                         currentTime += Time.deltaTime;
                     }
-                    else if (currentPauseTime <= waitTime)
+                    else if (waitTime < 0 || currentPauseTime <= waitTime)
                     {
-                        currentPauseTime += Time.deltaTime;
+                        if (waitTime > 0) // This dialogue is infinite
+                        {
+                            currentPauseTime += Time.deltaTime;
+                        }
                     }
                     else
                     {
