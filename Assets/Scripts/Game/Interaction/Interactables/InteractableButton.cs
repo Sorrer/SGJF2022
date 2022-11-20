@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD;
+using Game.Utility;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class InteractableButton : MonoBehaviour
 {
@@ -16,7 +19,17 @@ public class InteractableButton : MonoBehaviour
     void Start() {
         renderer = GetComponent<SpriteRenderer>();
         baseColor = renderer.color;
+
+        Debug.Log(buttonNum + " " + tracker.levels.Count);
+        var lvl = tracker.levels[buttonNum];
+        
+        
+        if (!lvl.isOpen)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
+
 
     void OnMouseOver() {
         if (Input.GetMouseButton(0)) {
@@ -27,6 +40,7 @@ public class InteractableButton : MonoBehaviour
             renderer.color = new Color(baseColor.r-hoverOffset, baseColor.g-hoverOffset,
                                     baseColor.b-hoverOffset, baseColor.a);
         }
+        
         if (Input.GetMouseButtonUp(0) && clicked) {
             OpenLevel();
         }
@@ -37,6 +51,6 @@ public class InteractableButton : MonoBehaviour
     }
 
     void OpenLevel() {
-        Debug.Log("Open level " + tracker.levels[buttonNum-1].levelNum);
+        LevelLoader.LoadLevel(tracker.levels[buttonNum].sceneName, false);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public class LevelStatus : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class LevelStatus : MonoBehaviour
     [SerializeField]
     public LvlStat status;
 
+    public void Start()
+    {
+        SetStatus(this.status);
+    }
+
     public void SetStatus(LvlStat newStatus)
     {
         status = newStatus;
@@ -19,10 +25,12 @@ public class LevelStatus : MonoBehaviour
         if (status.isOpen)
         {
             renderer.color = colorOpen;
+            renderer.sortingOrder = 0;
         }
         else
         {
             renderer.color = colorClosed;
+            renderer.sortingOrder = -1;
         }
     }
 }

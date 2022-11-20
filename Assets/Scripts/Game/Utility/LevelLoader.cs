@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Game.Common.ScriptableData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,8 @@ namespace Game.Utility
         public static LevelLoader instance; 
         public int sceneWaitTime;
 
+        public ScriptableDataGroup dataGroup;
+        
         public string loadingSceneName;
 
         private bool isLoading = false;
@@ -20,13 +23,15 @@ namespace Game.Utility
             DontDestroyOnLoad(this);
         }
 
-        public static void LoadLevel(string sceneName)
+        public static void LoadLevel(string sceneName, bool keepData = true)
         {
             if (instance.isLoading)
             {
                 Debug.LogError("Cannot load level when already loading level");
                 return;
             }
+            
+            if(!keepData) instance.dataGroup.ResetToDefault();
 
             instance.StartCoroutine(instance.LoadingCoroutine(sceneName));
 
@@ -60,6 +65,8 @@ namespace Game.Utility
                 {
                     loading.allowSceneActivation = true;
                 }
+
+                yield return null;
             }
             
             // TODO: Hide rat

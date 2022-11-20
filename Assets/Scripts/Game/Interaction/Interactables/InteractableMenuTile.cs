@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class InteractableMenuTile : MonoBehaviour
@@ -22,9 +23,9 @@ public class InteractableMenuTile : MonoBehaviour
 
         [SerializeField] float shiftOffset;
 
-        void Start() {
+        void Awake() {
             if (tracker.levels.Count == 0) { // If empty, add in levels
-
+                Debug.Log("Building levels");
                 foreach(var tile in levelTiles)
                 {
                     tracker.levels.Add(tile.status);
@@ -91,14 +92,21 @@ public class InteractableMenuTile : MonoBehaviour
                 // When release, if colliding swap, else return to initial
                 target.velocity = Vector2.zero;
                 var trigger = target.GetComponent<TriggerTracker>();
+                
                 if (trigger.isColliding) {
                     Debug.Log("i collide effectively ()b");
                     gameDestination = trigger.colliding[0];
 
                     var levelStatus = gameDestination.GetComponent<LevelStatus>();
-                    if (levelStatus == null) return;
 
-                    if (!levelStatus.status.isOpen) return;
+                    if (!levelStatus.status.isOpen || levelStatus == null)
+                    {
+                        Debug.Log("Not working");
+                        target.transform.position = initialVector;
+                        if(gameDestination != null) gameDestination.transform.position = destInitialPos;
+                        target = null;
+                        return;
+                    }
 
                     float closestPosition = float.PositiveInfinity;
                     foreach (var go in trigger.colliding) {
@@ -117,11 +125,11 @@ public class InteractableMenuTile : MonoBehaviour
                     }
                     tracker.MoveLevel(gameTarget.GetComponent<LevelStatus>().status,
                                     gameDestination.GetComponent<LevelStatus>().status, insertBefore);
-
+                    
                     UpdateTilePositions();
                 } else {
                     target.transform.position = initialVector;
-                    gameDestination.transform.position = destInitialPos;
+                    if(gameDestination != null) gameDestination.transform.position = destInitialPos;
                 }
                 target = null;
             }
