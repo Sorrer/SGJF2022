@@ -19,7 +19,8 @@ namespace Game.Conditions
         public Comparator comparison;
         public float FloatCompare;
         public int IntCompare;
-        
+        public bool BooleanCompare;
+
         public override bool IsTrue()
         {
 
@@ -71,6 +72,12 @@ namespace Game.Conditions
                         Debug.Log("Failed to do comparison, but could not comparator");
                         return false;
                 }
+            }
+            else if (data1.GetType() == typeof(BoolScriptableData))
+            {
+                var targetVal = BooleanCompare;
+                var curVal = ((BoolScriptableData)data1).value;
+                return targetVal == curVal;
             }
 
             return false;

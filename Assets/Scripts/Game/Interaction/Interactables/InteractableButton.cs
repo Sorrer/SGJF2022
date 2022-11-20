@@ -51,6 +51,6 @@ public class InteractableButton : MonoBehaviour
     }
 
     void OpenLevel() {
-        LevelLoader.LoadLevel(tracker.levels[buttonNum].sceneName);
+        LevelLoader.LoadLevel(tracker.levels[buttonNum].sceneName, false);
     }
 }

@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneWaitTime: 2
+  dataGroup: {fileID: 11400000, guid: 117310cdf455f0140a9815e19d661d5c, type: 2}
   loadingSceneName: LoadingScene
 --- !u!1 &2048308405
 GameObject:
