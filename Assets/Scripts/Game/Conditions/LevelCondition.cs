@@ -6,13 +6,27 @@ namespace Game.Conditions
     [CreateAssetMenu(fileName = "Level Order Condition", menuName = CONDITION_BASE_FILE_PATH + "Level Order")]
     public class LevelCondition : ConditionBase
     {
-        
-        // TODO: Replace GameObject with your level scriptable object
-        public List<GameObject> LevelOrder = new List<GameObject>();
+        public LevelTracker levelTracker;
+        public List<int> LevelOrder = new List<int>();
         
         public override bool IsTrue()
         {
-            return false; // TODO: Compare against current level order, if there is a level order that this exists
+
+            if (LevelOrder.Count == 0)
+            {
+                Debug.LogError("LevelOrder condition not set, should be set or else is always true");
+                return true;
+            }
+            
+            for (int i = 0; i < LevelOrder.Count - 1; i++)
+            {
+                if (!levelTracker.IsBefore(LevelOrder[i], LevelOrder[i + 1]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

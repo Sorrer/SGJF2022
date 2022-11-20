@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3435f5ac965a8a4aa1a4f361bef7c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  renderer: {fileID: 9104940236689029695}
+  colorClosed: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
+  colorOpen: {r: 1, g: 1, b: 1, a: 0}
   status:
     levelNum: 1
     isOpen: 0

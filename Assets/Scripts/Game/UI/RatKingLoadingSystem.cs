@@ -49,7 +49,6 @@ public class RatKingLoadingSystem : MonoBehaviour
     {
         if (Running)
         {
-            
             this.transform.rotation = Quaternion.Euler(0, 0, currentAngle);
             currentAngle += spinSpeed * Time.deltaTime;
 
