@@ -17,6 +17,8 @@ public class DoorObject : MonoBehaviour
     public UnityEvent OnForcedOpen;
     public UnityEvent OnClosed;
     public UnityEvent OnForcedClosed;
+    public UnityEvent OnHighlight;
+    public UnityEvent OnUnHighlight;
 
     public bool Opened;
     public bool Locked;
@@ -24,7 +26,10 @@ public class DoorObject : MonoBehaviour
     public bool PlaySound;
     public SoundEmitter FailedEnterDoorSound;
     public SoundEmitter EnterDoorSound;
+    public SoundEmitter UnlockSound;
 
+    public LevelTracker tracker;
+    
     public int currentLevel = 1; // Temp for fast coding
     
     /// <summary>
@@ -43,7 +48,7 @@ public class DoorObject : MonoBehaviour
         }
         else
         {
-            if (ConditionBase.IsTrueAll(enableWhen))
+            if (enableWhen.Count > 0 && ConditionBase.IsTrueAll(enableWhen))
             {
                 ForceOpen();
             }
@@ -53,20 +58,43 @@ public class DoorObject : MonoBehaviour
             }
         }
         
-        
-        
     }
 
     public void Enter()
     {
+        var nowOpen = ConditionBase.IsTrueAll(enableWhen);
+        
         if (PlaySound)
         {
-            
+            if (Opened)
+            {
+                EnterDoorSound.PlaySound();
+            }
+            else if(nowOpen)
+            {
+                UnlockSound.PlaySound();
+            }
+            else
+            {
+                FailedEnterDoorSound.PlaySound();
+            }
         }
+
+        if (Locked) return;
+        
+        if (nowOpen)
+        {
+            Open();
+
+            return;
+        }
+
+        if (!Opened) return;
         
         if (forceLevel.Equals(""))
         {
-            // TODO: Get next level
+            var lvl = tracker.GetNextLevel(currentLevel);
+            LevelLoader.LoadLevel(lvl.sceneName);
         }
         else
         {
@@ -77,21 +105,35 @@ public class DoorObject : MonoBehaviour
     }
     public void Open()
     {
+        Opened = true;
         if(OnOpen != null) OnOpen?.Invoke();
     }
     public void ForceOpen()
     {
+        Opened = true;
         if(OnForcedOpen != null) OnForcedOpen?.Invoke();
     }
 
     
     public void Close()
     {
+        Opened = false;
         if(OnClosed != null) OnClosed?.Invoke();
     }
     public void ForceClose()
     {
+        Opened = false;
         if(OnForcedClosed != null) OnForcedClosed?.Invoke();
     }
 
+
+    public void Highlight()
+    {
+        if(OnHighlight != null) OnHighlight?.Invoke();
+    }
+
+    public void UnHighlight()
+    {
+        if(OnUnHighlight != null) OnUnHighlight?.Invoke();
+    }
 }

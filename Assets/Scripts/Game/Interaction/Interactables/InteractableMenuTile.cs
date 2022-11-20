@@ -11,6 +11,7 @@ public class InteractableMenuTile : MonoBehaviour
 
         GameObject gameTarget, gameDestination;
         public List<LevelStatus> levelTiles = new List<LevelStatus>();
+        public List<InteractableButton> levelButtons = new List<InteractableButton>();
         private List<Vector3> initialPosition = new List<Vector3>();
 
         Vector3 initialVector;
@@ -22,15 +23,19 @@ public class InteractableMenuTile : MonoBehaviour
         [SerializeField] float shiftOffset;
 
         void Start() {
-            // TODO: Remove this
-            tracker.levels.Clear();
-            
             if (tracker.levels.Count == 0) { // If empty, add in levels
 
                 foreach(var tile in levelTiles)
                 {
                     tracker.levels.Add(tile.status);
                     initialPosition.Add(tile.transform.position);
+                }
+            }
+            else
+            {
+                foreach (LevelStatus tile in levelTiles)
+                {
+                    tile.SetStatus(tracker.GetLevel(tile.status.levelNum));
                 }
             }
         }
@@ -89,6 +94,11 @@ public class InteractableMenuTile : MonoBehaviour
                 if (trigger.isColliding) {
                     Debug.Log("i collide effectively ()b");
                     gameDestination = trigger.colliding[0];
+
+                    var levelStatus = gameDestination.GetComponent<LevelStatus>();
+                    if (levelStatus == null) return;
+
+                    if (!levelStatus.status.isOpen) return;
 
                     float closestPosition = float.PositiveInfinity;
                     foreach (var go in trigger.colliding) {

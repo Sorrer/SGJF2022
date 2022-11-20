@@ -51,7 +51,6 @@ namespace Game.Player
             }
             
 
-
             if (isGroundedTracker.isColliding != previousIsGroundColliding)
             {
                 if (isGroundedTracker.isColliding)

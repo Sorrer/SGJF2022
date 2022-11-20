@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/StartScene.unity
+    guid: 4d07ceb9c1a308f4a91a73add78e4ebe
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level0.unity
+    guid: cbb04e81e7184b24da86b7ec57164310
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1 - RatTOtem.unity
+    guid: 7c9e0f56a65cc4e40b1c4fa9c5b89a6e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: f9e7920d34eaf9d40824b025062dc688
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2.unity
+    guid: 6f01b4ef23f713f4dae727f7bbbb5fe0
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: 4c7ce9101ddff784ba9171f3ad90621d
+  - enabled: 1
+    path: Assets/Scenes/LevelMenu.unity
+    guid: 7cf56e14b7717e44299e1a8205fc3027
   m_configObjects: {}

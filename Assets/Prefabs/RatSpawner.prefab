@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6450877926366581059
+--- !u!1 &7619401705066551437
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6450877926366581061}
-  - component: {fileID: 6450877926366581060}
+  - component: {fileID: 7619401705066551439}
+  - component: {fileID: 7619401705066551436}
   m_Layer: 0
-  m_Name: RatLoading
+  m_Name: RatSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6450877926366581061
+--- !u!4 &7619401705066551439
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6450877926366581059}
+  m_GameObject: {fileID: 7619401705066551437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.30012357, y: 4.9209576, z: -0.2017219}
+  m_LocalPosition: {x: -0.34466344, y: -1.1057274, z: -0.0451339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6450877926366581060
+--- !u!114 &7619401705066551436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6450877926366581059}
+  m_GameObject: {fileID: 7619401705066551437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea81085a2e80b22418161155036a98b1, type: 3}
+  m_Script: {fileID: 11500000, guid: be28938c29efc1d4ca3609c8d5ed01c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RatKingCount: {fileID: 11400000, guid: 1acfb21c5d507a04e9a8722e09aad798, type: 2}
-  spinSpeed: 5
-  RatSpritePrefab: {fileID: 8234612780595060510, guid: 1274ca2e34299e14ab3e9f018bf81c5f, type: 3}
-  Running: 0
-  currentAngle: 0
+  spawnPosition: {fileID: 7619401705066551437}
+  ratPrefab: {fileID: 5838256715950581676, guid: 602ef99b0848077419d3f10d0bb28b84, type: 3}

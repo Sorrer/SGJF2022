@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1828205164c41f4b6c10240f2442840, type: 3}
-  m_Name: Test
+  m_Name: TotemTotal
   m_EditorClassIdentifier: 
   <PreSerialized>k__BackingField:
     m_PersistentCalls:
@@ -26,5 +26,5 @@ MonoBehaviour:
       m_Calls: []
   Id: 
   isSavable: 0
-  _value: 8
+  _value: 5
   _defaultValue: 0

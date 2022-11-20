@@ -1,11 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSpawner : MonoBehaviour
+namespace Game.Player
 {
-    private void Awake()
+    public class PlayerSpawner : MonoBehaviour
     {
+        public GameObject spawnPosition;
+        public GameObject ratPrefab;
+
+        private bool hasSpawned = false;
+        private void Awake()
+        {
+            if (hasSpawned) return;
+            hasSpawned = true;
+
+
+            var rat = Instantiate(ratPrefab);
+
+            rat.transform.position = spawnPosition.transform.position;
+        }
     }
 }
