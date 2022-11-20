@@ -13,4 +13,5 @@ public class LevelStatus : MonoBehaviour
 public struct LvlStat {
     public int levelNum;
     public bool isOpen;
+    public String sceneName;
 }

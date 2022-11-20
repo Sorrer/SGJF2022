@@ -7,8 +7,24 @@ using UnityEngine;
     {
         public List<LvlStat> levels = new List<LvlStat>();
 
-        public void MoveLevel(int lvlTarget, int lvlDestination) {
-            levels.Remove();
+        LvlStat tempTarget;
+
+        private int indexTarget, indexDest;
+
+        public void MoveLevel(LvlStat statTarget, LvlStat statDestination, bool before) {
+            // remove level of number lvlTarget, save in temp
+            tempTarget = statTarget;
+
+            //Debug.Log(statTarget.levelNum + " " + levels.IndexOf(statTarget));
+            //Debug.Log(statDestination.levelNum + " " + levels.IndexOf(statDestination));
+            levels.Remove(statTarget);
+
+            
+            if (before) {
+                levels.Insert(levels.IndexOf(statDestination), tempTarget);
+            } else {
+                levels.Insert(levels.IndexOf(statDestination)+1, tempTarget);
+            }
         }
 
     }
