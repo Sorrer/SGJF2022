@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e139fec75acda94896d08f6cbe03453
+guid: ba4dcfcf6515920419a74f9512f21952
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: janitor-spritesheet_0
+      name: build_pipe_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2ec6a7a9a1445499c254d731f13fcd
+      internalID: -1632596929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: build_pipe_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d380b7d592360b740bb97c6404f2c209
+      internalID: -1617892864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: build_pipe_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666f21dc50f5eb34ba12ff0f078c8ee7
+      internalID: 1226417732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: build_pipe_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +182,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c20c27dfa2d20a746b0462cb721e73d3
-      internalID: -782831953
+      spriteID: 1c35c70f9a044d34582ebf1575617b48
+      internalID: 2031790346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: janitor-spritesheet_1
+      name: build_pipe_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ebac34faa4baf4596a30e54f04d747
+      internalID: -730823928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: build_pipe_5
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
-        height: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,50 +224,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1be9d30322614244096bd33668185d18
-      internalID: 2071011553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: janitor-spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d5c8ec592ca8e44aa5395735f7a3260
-      internalID: 757577052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: janitor-spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b2b1a98df0f56f4a83376ba07bea474
-      internalID: -844480097
+      spriteID: c30c172084d097345bc471da4f9776dd
+      internalID: 1425663417
       vertices: []
       indices: 
       edges: []
@@ -199,10 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      janitor-spritesheet_0: -782831953
-      janitor-spritesheet_1: 2071011553
-      janitor-spritesheet_3: -844480097
-      janitor-spritesheet_2: 757577052
+      build_pipe_4: -730823928
+      build_pipe_2: 1226417732
+      build_pipe_0: -1632596929
+      build_pipe_1: -1617892864
+      build_pipe_5: 1425663417
+      build_pipe_3: 2031790346
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
