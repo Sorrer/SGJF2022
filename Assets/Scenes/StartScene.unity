@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 2048308406}
   - component: {fileID: 2048308407}
   - component: {fileID: 2048308408}
+  - component: {fileID: 2048308409}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -463,3 +464,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4ee9d0bd09bc5bb4cac440c1ad632380, type: 2}
   - {fileID: 11400000, guid: a3b754ae89a7b5c40a1cd2313601c345, type: 2}
   - {fileID: 11400000, guid: 6faf0ef7d7a4b6f44bcbfad2fd26f93a, type: 2}
+--- !u!114 &2048308409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048308405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26d8a83f03207c499f253d500319f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totemCheck:
+  - {fileID: 11400000, guid: 8e7b381df17e6eb4ea38e65f8fdde880, type: 2}
+  - {fileID: 11400000, guid: 942f33aeb145a1d44860f6bf93a43b78, type: 2}
+  - {fileID: 11400000, guid: 9351e5d76b3ca8045813287e93f5b4ca, type: 2}
+  totemTotal: {fileID: 11400000, guid: 1acfb21c5d507a04e9a8722e09aad798, type: 2}

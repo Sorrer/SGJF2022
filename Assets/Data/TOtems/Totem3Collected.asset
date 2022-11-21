@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f530d786749b4249b7ebbef054f6dac7, type: 3}
-  m_Name: NotPersistant
+  m_Script: {fileID: 11500000, guid: 6861f658858f459eb591f3b0f66f7be7, type: 3}
+  m_Name: Totem3Collected
   m_EditorClassIdentifier: 
-  data:
-  - {fileID: 11400000, guid: 2864f89d42a8b4b4da4828dacaddc894, type: 2}
-  - {fileID: 11400000, guid: 0c4653a4d2fa3f044a25c4b24ac6cfd8, type: 2}
+  data1: {fileID: 11400000, guid: 9351e5d76b3ca8045813287e93f5b4ca, type: 2}
+  comparison: 0
+  FloatCompare: 0
+  IntCompare: 0
+  BooleanCompare: 1
