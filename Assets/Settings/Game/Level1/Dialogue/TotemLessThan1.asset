@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6861f658858f459eb591f3b0f66f7be7, type: 3}
-  m_Name: RatTotemCheck
+  m_Name: TotemLessThan1
   m_EditorClassIdentifier: 
   data1: {fileID: 11400000, guid: 1acfb21c5d507a04e9a8722e09aad798, type: 2}
-  comparison: 5
+  comparison: 2
   FloatCompare: 0
   IntCompare: 1
   BooleanCompare: 0

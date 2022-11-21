@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6861f658858f459eb591f3b0f66f7be7, type: 3}
-  m_Name: RatTotemCheck
+  m_Script: {fileID: 11500000, guid: a7c11a01d6344d23adc63e9cf06172a9, type: 3}
+  m_Name: LevelOrderCheck Level 1
   m_EditorClassIdentifier: 
-  data1: {fileID: 11400000, guid: 1acfb21c5d507a04e9a8722e09aad798, type: 2}
-  comparison: 5
-  FloatCompare: 0
-  IntCompare: 1
-  BooleanCompare: 0
+  levelTracker: {fileID: 0}
+  LevelOrder: 0200000001000000
