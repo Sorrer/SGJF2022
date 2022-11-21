@@ -26,7 +26,7 @@ namespace Game.Conditions
                 }
             }
 
-            return true;
+            return !useOr;
         }
     }
 }
