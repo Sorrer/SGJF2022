@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   levelNum: 2
-  isOpen: 0
+  isOpen: 1
   sceneName: Level2

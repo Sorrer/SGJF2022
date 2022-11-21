@@ -51,8 +51,8 @@ namespace Game.Conditions
             }
             else if (data1.GetType() == typeof(IntScriptableData))
             {
-                var targetVal = IntCompare;
                 var curVal = ((IntScriptableData)data1).value;
+                var targetVal = IntCompare;
                 switch (comparison)
                 {
 

@@ -123,10 +123,10 @@ namespace Game.Interaction.Interactables
         {
             if (GetLevelIndexOf(levelNum) > GetLevelIndexOf(targetLevelNum))
             {
-                return true;
+                return false;
             }
 
-            return false;
+            return true;
         }
 
     }

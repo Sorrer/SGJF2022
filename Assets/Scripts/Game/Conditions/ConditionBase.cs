@@ -25,7 +25,7 @@ namespace Game.Conditions
                     if (!cond.IsTrue()) return false;
                 }
             }
-
+            
             return !useOr;
         }
     }

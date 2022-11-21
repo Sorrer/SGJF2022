@@ -44,11 +44,14 @@ public class DoorObject : MonoBehaviour
     private bool GetState()
     {
         var isTrue = ConditionBase.IsTrueAll(enableWhen, UseOr);
+        
         Debug.Log(isTrue);
         if (WhenFalse)
         {
             isTrue = !isTrue;
         }
+        
+        Debug.Log("Wut" + isTrue);
         
         return isTrue;
     }

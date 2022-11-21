@@ -16,4 +16,4 @@ MonoBehaviour:
   comparison: 0
   FloatCompare: 0
   IntCompare: 0
-  BooleanCompare: 0
+  BooleanCompare: 1
