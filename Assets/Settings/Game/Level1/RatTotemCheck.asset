@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data1: {fileID: 11400000, guid: 1acfb21c5d507a04e9a8722e09aad798, type: 2}
   comparison: 2
-  FloatCompare: 1
-  IntCompare: 0
+  FloatCompare: 0
+  IntCompare: 1
+  BooleanCompare: 0

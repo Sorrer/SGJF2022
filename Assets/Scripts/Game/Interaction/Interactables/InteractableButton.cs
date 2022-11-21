@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using FMOD;
+using Game.Interaction.Interactables;
 using Game.Utility;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -20,8 +21,8 @@ public class InteractableButton : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         baseColor = renderer.color;
 
-        Debug.Log(buttonNum + " " + tracker.levels.Count);
-        var lvl = tracker.levels[buttonNum];
+        Debug.Log(buttonNum + " " + LevelTracker.levels.Count);
+        var lvl = LevelTracker.levels[buttonNum];
         
         
         if (!lvl.isOpen)
@@ -51,6 +52,6 @@ public class InteractableButton : MonoBehaviour
     }
 
     void OpenLevel() {
-        LevelLoader.LoadLevel(tracker.levels[buttonNum].sceneName, false);
+        LevelLoader.LoadLevel(LevelTracker.levels[buttonNum].sceneName, false);
     }
 }

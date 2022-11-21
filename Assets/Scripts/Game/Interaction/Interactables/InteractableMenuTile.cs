@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Game.Interaction.Interactables;
 using UnityEngine;
+using LvlStat = Game.Interaction.Interactables.LevelTracker.LvlStat;
 
 public class InteractableMenuTile : MonoBehaviour
 {
@@ -24,20 +26,27 @@ public class InteractableMenuTile : MonoBehaviour
         [SerializeField] float shiftOffset;
 
         void Awake() {
-            if (tracker.levels.Count == 0) { // If empty, add in levels
+            if (LevelTracker.levels.Count == 0) { // If empty, add in levels
                 Debug.Log("Building levels");
                 foreach(var tile in levelTiles)
                 {
-                    tracker.levels.Add(tile.status);
+                    LevelTracker.levels.Add(tile.status);
                     initialPosition.Add(tile.transform.position);
                 }
             }
             else
             {
+                Debug.Log("Setting level tiles");
+                
+                tracker.print();
+                
+                
                 foreach (LevelStatus tile in levelTiles)
                 {
                     initialPosition.Add(tile.transform.position);
                     tile.SetStatus(tracker.GetLevel(tile.status.levelNum));
+                    Debug.Log("Tile being set " + tile.status.levelNum + " to " + tracker.GetLevelIndexOf(tile.status.levelNum));
+                    
                 }
                 
                 UpdateTilePositions();
@@ -148,7 +157,7 @@ public class InteractableMenuTile : MonoBehaviour
         {
             for(int i = 0; i < initialPosition.Count; i++)
             {
-                GetLevelNumObj(tracker.levels[i].levelNum).transform.position = initialPosition[i];
+                GetLevelNumObj(LevelTracker.levels[i].levelNum).transform.position = initialPosition[i];
             }   
         }
 

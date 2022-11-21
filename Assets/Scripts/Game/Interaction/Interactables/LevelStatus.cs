@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
-using Unity.VisualScripting;
+using Game.Common.Interactable.Interactables;
+using LvlStat = Game.Interaction.Interactables.LevelTracker.LvlStat;
 
 public class LevelStatus : MonoBehaviour
 {
@@ -13,14 +12,14 @@ public class LevelStatus : MonoBehaviour
     public Color hoverColor;
     
     [SerializeField]
-    public LvlStat status;
+    public LevelStatusSO status;
 
     public void Start()
     {
         SetStatus(this.status);
     }
 
-    public void SetStatus(LvlStat newStatus)
+    public void SetStatus(LevelStatusSO newStatus)
     {
         status = newStatus;
 
@@ -48,11 +47,4 @@ public class LevelStatus : MonoBehaviour
     {
         SetStatus(this.status);
     }
-}
-
-[Serializable]
-public struct LvlStat {
-    public int levelNum;
-    public bool isOpen;
-    public String sceneName;
 }

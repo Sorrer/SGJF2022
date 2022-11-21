@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.Conditions;
+using Game.Interaction.Interactables;
 using Game.Sounds;
 using Game.Utility;
 using Unity.VisualScripting;
@@ -11,6 +12,8 @@ using UnityEngine.SceneManagement;
 
 public class DoorObject : MonoBehaviour
 {
+    public bool WhenFalse;
+    public bool UseOr;
     public List<ConditionBase> enableWhen = new List<ConditionBase>();
 
     public UnityEvent OnOpen;
@@ -37,7 +40,18 @@ public class DoorObject : MonoBehaviour
     /// Scene name for which this door should go to
     /// </summary>
     public string forceLevel = "";
-    
+
+    private bool GetState()
+    {
+        var isTrue = ConditionBase.IsTrueAll(enableWhen, UseOr);
+        Debug.Log(isTrue);
+        if (WhenFalse)
+        {
+            isTrue = !isTrue;
+        }
+        
+        return isTrue;
+    }
     private void Start()
     {
         if (Locked) Opened = false;
@@ -48,7 +62,7 @@ public class DoorObject : MonoBehaviour
         }
         else
         {
-            if (OpenOnStartIfConditions && enableWhen.Count > 0 && ConditionBase.IsTrueAll(enableWhen))
+            if (OpenOnStartIfConditions && enableWhen.Count > 0 && GetState())
             {
                 ForceOpen();
             }
@@ -62,7 +76,7 @@ public class DoorObject : MonoBehaviour
 
     public void Enter()
     {
-        var nowOpen = ConditionBase.IsTrueAll(enableWhen);
+        var nowOpen = GetState();
         
         if (PlaySound)
         {

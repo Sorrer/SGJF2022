@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Interaction.Interactables;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
