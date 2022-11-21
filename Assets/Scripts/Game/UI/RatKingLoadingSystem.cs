@@ -23,7 +23,6 @@ public class RatKingLoadingSystem : MonoBehaviour
         Activate();
     }
 
-    [MenuItem("Activate")]
     public void Activate()
     {
         foreach (var rat in currentRats)

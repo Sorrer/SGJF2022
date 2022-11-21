@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Interaction.Interactables;
 using UnityEngine;
 
 namespace Game.Utility

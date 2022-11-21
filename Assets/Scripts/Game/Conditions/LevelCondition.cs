@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game.Interaction.Interactables;
 using UnityEngine;
 
 namespace Game.Conditions

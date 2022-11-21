@@ -1,22 +1,37 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using Game.Common.Interactable.Interactables;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Level Tracker", menuName = "Settings/LevelTrack")]
+namespace Game.Interaction.Interactables
+{
+    [CreateAssetMenu(fileName = "Level Tracker", menuName = "Settings/LevelTrack")]
     public class LevelTracker : ScriptableObject
     {
-        public List<LvlStat> levels = new List<LvlStat>();
+        
+        [Serializable]
+        public struct LvlStat {
+            public int levelNum;
+            public bool isOpen;
+            public String sceneName;
+        }
 
-        LvlStat tempTarget;
+        [SerializeField]
+        public static List<LevelStatusSO> levels = new List<LevelStatusSO>();
+
+        LevelStatusSO tempTarget;
 
         private int indexTarget, indexDest;
 
         public void ClearLevels()
         {
-            levels = new List<LvlStat>();
-            levels.Clear();
+            levels = new List<LevelStatusSO>();
         }
-        public void MoveLevel(LvlStat statTarget, LvlStat statDestination, bool before) {
+        public void MoveLevel(LevelStatusSO statTarget, LevelStatusSO statDestination, bool before) {
+            
+            Debug.Log("Move level before");
+            print();
+            
             // remove level of number lvlTarget, save in temp
             tempTarget = statTarget;
 
@@ -30,6 +45,18 @@ using UnityEngine;
             } else {
                 levels.Insert(levels.IndexOf(statDestination)+1, tempTarget);
             }
+            levels = new List<LevelStatusSO>(levels);
+            Debug.Log("Move level after");
+            print();
+            
+        }
+
+        public void print()
+        {
+            foreach (LevelStatusSO stat in levels)
+            {
+                Debug.Log("Stat data - " + stat.isOpen + " " + stat.levelNum + " " + stat.sceneName);
+            }
         }
 
         public int GetLevelIndexOf(int levelNum)
@@ -42,7 +69,7 @@ using UnityEngine;
             return -1;
         }
 
-        public LvlStat GetLevel(int levelNum)
+        public LevelStatusSO GetLevel(int levelNum)
         {  
             
             for (int i = 0; i < levels.Count; i++)
@@ -50,7 +77,7 @@ using UnityEngine;
                 if (levels[i].levelNum == levelNum) return levels[i];
             }
 
-            return new LvlStat() { levelNum = -1 };
+            return null;
         }
 
         public void DisableLvl(int levelNum)
@@ -79,14 +106,14 @@ using UnityEngine;
 
         }
 
-        public LvlStat GetNextLevel(int currentLevelNum)
+        public LevelStatusSO GetNextLevel(int currentLevelNum)
         {
 
             int ind = GetLevelIndexOf(currentLevelNum);
 
             if (ind + 1 >= levels.Count)
             {
-                return new LvlStat(){ levelNum = -1};  
+                return null;
             }
 
             return levels[ind + 1];
@@ -103,3 +130,4 @@ using UnityEngine;
         }
 
     }
+}
