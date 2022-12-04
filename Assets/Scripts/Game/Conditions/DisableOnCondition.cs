@@ -8,10 +8,19 @@ using UnityEngine;
 /// </summary>
 public class DisableOnCondition : MonoBehaviour
 {
+    public bool Opposite = false;
     public List<ConditionBase> conditions = new List<ConditionBase>();
+
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.SetActive(!ConditionBase.IsTrueAll(conditions));
+        if (Opposite)
+        {
+            this.gameObject.SetActive(ConditionBase.IsTrueAll(conditions));
+        }
+        else
+        {
+            this.gameObject.SetActive(!ConditionBase.IsTrueAll(conditions));
+        }
     }
 }

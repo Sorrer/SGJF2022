@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 153969989}
   - component: {fileID: 153969988}
   - component: {fileID: 153969992}
+  - component: {fileID: 153969993}
   m_Layer: 0
   m_Name: Jan (1)
   m_TagString: Untagged
@@ -268,8 +269,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e0b33707867646af2d9ef800bc1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Opposite: 0
   conditions:
   - {fileID: 11400000, guid: 28b5384f1cc6ce842b04de6c62c92e8e, type: 2}
+--- !u!114 &153969993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153969987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075e0b33707867646af2d9ef800bc1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opposite: 1
+  conditions:
+  - {fileID: 11400000, guid: cd08266ff9f241d49b1f0975b83a7a94, type: 2}
 --- !u!1 &154424692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4653,6 +4670,7 @@ GameObject:
   - component: {fileID: 634334646}
   - component: {fileID: 634334649}
   - component: {fileID: 634334650}
+  - component: {fileID: 634334651}
   m_Layer: 0
   m_Name: Jan
   m_TagString: Untagged
@@ -4785,8 +4803,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e0b33707867646af2d9ef800bc1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Opposite: 0
   conditions:
   - {fileID: 11400000, guid: 287914c2d5f7e7746ab7ae5698b7de84, type: 2}
+--- !u!114 &634334651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634334645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075e0b33707867646af2d9ef800bc1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opposite: 0
+  conditions:
+  - {fileID: 11400000, guid: cd08266ff9f241d49b1f0975b83a7a94, type: 2}
 --- !u!1 &695955913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,6 +4833,7 @@ GameObject:
   - component: {fileID: 695955915}
   - component: {fileID: 695955914}
   - component: {fileID: 695955917}
+  - component: {fileID: 695955918}
   m_Layer: 0
   m_Name: Shower Water
   m_TagString: Untagged
@@ -9612,8 +9647,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075e0b33707867646af2d9ef800bc1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Opposite: 0
   conditions:
   - {fileID: 11400000, guid: 28b5384f1cc6ce842b04de6c62c92e8e, type: 2}
+--- !u!114 &695955918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695955913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075e0b33707867646af2d9ef800bc1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Opposite: 1
+  conditions:
+  - {fileID: 11400000, guid: cd08266ff9f241d49b1f0975b83a7a94, type: 2}
 --- !u!1 &843428955
 GameObject:
   m_ObjectHideFlags: 0
