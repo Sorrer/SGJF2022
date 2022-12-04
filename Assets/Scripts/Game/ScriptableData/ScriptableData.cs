@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Game.Common.ScriptableData
@@ -12,15 +15,19 @@ namespace Game.Common.ScriptableData
         public const string SCRIPTABLE_OBJECT_DATA_MENU_NAME = "Scriptables/";
 
         [SerializeField]
-        private T _value;
+        public T _value;
         [SerializeField]
-        private T _defaultValue;
+        public T _defaultValue;
         
         public T value
         {
             get => _value;
             set
             {
+                
+                #if UNITY_EDITOR
+                EditorUtility.SetDirty(this);
+                #endif
                 // TODO: Benchmark this performance and check if it is faster to serialize and flag than check this condition every single set
                 // In theory if code is correctly set, this should not be necessary.
                 if (_value != null && !_value.Equals(value))

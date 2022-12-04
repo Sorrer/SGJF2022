@@ -75,6 +75,12 @@ public class DoorObject : MonoBehaviour
             }
         }
         
+        var lvl = tracker.GetNextLevel(currentLevel);
+
+        if (forceLevel == "" && lvl == null)
+        {
+            ForceClose();
+        }
     }
 
     public void Enter()
