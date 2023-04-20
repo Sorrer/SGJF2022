@@ -43,6 +43,8 @@ public class DoorObject : MonoBehaviour
 
     private bool GetState()
     {
+        if (enableWhen.Count == 0) return false;
+        
         var isTrue = ConditionBase.IsTrueAll(enableWhen, UseOr);
         
         Debug.Log(isTrue);

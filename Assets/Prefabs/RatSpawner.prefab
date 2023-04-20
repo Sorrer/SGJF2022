@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPosition: {fileID: 7619401705066551437}
+  cameraPrefab: {fileID: 4887659891635641746, guid: 0fb1d56fec9b9194b9b92644fdc03fa2, type: 3}
   ratPrefab: {fileID: 5838256715950581676, guid: 602ef99b0848077419d3f10d0bb28b84, type: 3}
